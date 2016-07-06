@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html ng-App="cricket">
+<head>
+	<title>Visualize Cricket</title>
+	<link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/customStyles.css">
+    <link rel="stylesheet" href="bower_components/ammap3/ammap/ammap.css">
+    <script type="text/javascript" src="bower_components/ammap3/ammap/ammap.js"> </script>
+    <script src="bower_components/ammap3/ammap/maps/js/worldLow.js"></script>
+
+</head>
+<body>
+
+    <nav class="navbar  navbar-custom navbar-fixed-top">
+      <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Visualize Cricket</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav pull-right">
+                <li><a href="home.html">HOME</a></li>
+
+
+                <li><a href="team.html">TEAM</a></li>
+                <li class="active" ><a href="match.html">MATCH</a></li>
+                <li><a href="player.html">PLAYER</a></li>
+                <li><a href="#">ABOUT</a></li>
+
+              </ul>
+
+            </div>
+      </div>
+    </nav>
+<div class="container-fluid" ng-controller="home">
+    <div class="row">
+
+        <div class="col-sm-4">
+           <center>
+
+               <h3>SELECT A TEAM</h3>
+
+							 <div id="mapdiv" class="makingRelative" style=" width:90%;height:300px;"></div>
+               <div class>
+
+
+               </div>
+						<!--
+                <img class="img-responsive" src="images/world-map.png" >
+            -->
+            </center>
+
+        </div>
+
+        <div class="col-sm-8">
+
+            <div class="row">
+
+                <center> <h2>PAKISTAN VS INDIA
+
+                     <small>In lord</small>
+
+                    </h2> </center>
+
+                <center>
+                    <div class="col-sm-3">
+                        <h2><small><strong>Player of the match</strong></small></h2>
+                        <p>
+                            <cite>Inzamam</cite>
+                        </p>
+
+                    </div>
+                    <div class="col-sm-2">
+                        <h2><small><strong>Highest Total</strong></small></h2>
+                        <p>
+                            <cite>300</cite>
+                        </p>
+                    </div>
+                    <div class="col-sm-2">
+                        <h2><small><strong>Lowest Total</strong></small></h2>
+                        <p>
+                            <cite>30</cite>
+                        </p>
+                    </div>
+                    <div class="col-sm-2">
+                        <h2><small><strong>Best Batting</strong></small></h2>
+                        <p>
+                            <cite>200 - Razzak </cite>
+                        </p>
+                    </div>
+                    <div class="col-sm-3">
+                        <h2><small><strong>Best Bowling</strong></small></h2>
+                        <p>
+                            <cite>4/20 - Sami </cite>
+                        </p>
+                    </div>
+                </center>
+
+            </div>
+
+            <div class="row" ng-controller="match_team1">
+                <div class="col-sm-6" >
+                    <p style="height:10px"></p>
+                    <center><h3>Pakistan</h3></center>
+                    <center>
+                        <button type="button" class=" btn btn-default btn-info">Batting</button>
+                        <button type="button" class=" btn btn-default btn-success">Bowling</button>
+                    </center>
+
+                    <div class="row">
+
+                        <div class="col-sm-12 pull-left" id="team1">
+
+
+
+                        </div>
+
+
+
+
+                        <center>
+                           <!-- <img src="images/pak-graph.gif" class="img-responsive">-->
+
+
+
+                            <nav>
+                              <ul class="pagination" >
+                                <li>
+                                  <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                  </a>
+                                </li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#team2">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                  <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                  </a>
+                                </li>
+                              </ul>
+
+                            </nav>
+
+
+                        </center>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-sm-6">
+                    <p style="height:10px"></p>
+                    <center><h3>India</h3></center>
+                    <center>
+                        <button type="button" class=" btn btn-default btn-info">Batting</button>
+                        <button type="button" class=" btn btn-default btn-success">Bowling</button>
+                    </center>
+
+                    <div class="row">
+
+
+                      <!--  <div class="col-sm-12" id="team2">-->
+
+
+
+                        </div>
+
+
+                        <center>
+                            <!--<img src="images/pak-graph.gif" class="img-responsive">-->
+                            <div class="col-sm-12" id="team2"></div>
+                            <nav>
+                              <ul class="pagination">
+                                <li class="page-item">
+                                  <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                  </a>
+                                </li>
+                                <li class="page-item"><a class="page-link"  href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item">
+                                  <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </nav>
+
+
+                        </center>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+ <!-- <div class="row">
+    <div class="col-sm-4">
+      <h3>Select Opponent Team</h3>
+      <img src="images/world-map.png" height="350px" width="350px">
+    </div>
+    <div class="col-sm-8">
+      <h1><center>Pakistan vs India</center></h1>
+      <div class="col-md-2"><a href="#">Matches Played</a></div>
+  <div class="col-md-2"><a href="#">Highest Score</a></div>
+   <div class="col-md-2"><a href="#">Fifty</a></div>
+    <div class="col-md-2"><a href="#">Hundred</a></div>
+     <div class="col-md-2"><a href="#">Batting Average</a></div>
+     <br>
+
+     </div>
+    <img src="images/ind-vs-pak.png">
+
+</div>
+</div>
+</div>-->
+</div>
+    <script  src="./bower_components/angular/angular.js">      </script>
+    <script  src="./scripts/controller.js"></script>
+	<script src="./bower_components/jquery-1.9.1.min/index.js"></script>
+
+    <script  src="./scripts/bootstrap.min.js"></script>
+
+    <script src="./bower_components/highcharts/highcharts.js"></script>
+<script>
+    $(function() {
+
+  $("#demo_pag1").bs_pagination({
+    totalPages: 100
+  });
+
+});
+</script>
+
+</body>
+</html>

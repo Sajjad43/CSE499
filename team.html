@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html ng-app="cricket">
+<head>
+	<title>Visualize Cricket</title>
+		<link rel="stylesheet" href="./styles/bootstrap.min.css">
+		<link rel="stylesheet" href="./styles/customStyles.css">
+		<link rel="stylesheet" href="bower_components/ammap3/ammap/ammap.css">
+		<script type="text/javascript" src="bower_components/ammap3/ammap/ammap.js"> </script>
+		<script src="bower_components/ammap3/ammap/maps/js/worldLow.js"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+
+      <a class="navbar-brand" href="#">Visualize Cricket</a>
+    </div>
+    <div class="navbar-collapse collapse" id="myNavbar">
+      <ul class="nav navbar-nav pull-right">
+        <li ><a href="home.html">HOME</a></li>
+
+
+        <li class="active"><a href="team.html">TEAM</a></li>
+        <li><a href="match.html">MATCH</a></li>
+        <li><a href="player.html">PLAYER</a></li>
+        <li><a href="#">ABOUT</a></li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+    <div class="row" ng-controller="home">
+
+        <div class="col-sm-4">
+           <center>
+
+               <h3>SELECT A TEAM</h3>
+							 <!--
+                <img class="img-responsive width:50px;" src="images/world-map.png" >
+							-->
+							<div id="mapdiv" class="makingRelative" style=" width:90%;height:300px;"></div>
+            </center>
+
+
+					</div>
+
+
+
+
+        <div class="col-sm-8">
+
+            <div class="row">
+
+                <center> <h2>PAKISTAN</h2> </center>
+
+                <center>
+                    <div class="col-sm-3">
+                        <h2><small><strong>Player of the match</strong></small></h2>
+                        <p>
+                            <cite>-Inzamam</cite>
+                        </p>
+
+                    </div>
+                    <div class="col-sm-2">
+                        <h2><small><strong>Highest Total</strong></small></h2>
+                        <p>
+                            <cite>-300</cite>
+                        </p>
+                    </div>
+                    <div class="col-sm-2">
+                        <h2><small><strong>Lowest Total</strong></small></h2>
+                        <p>
+                            <cite>30</cite>
+                        </p>
+                    </div>
+                    <div class="col-sm-2">
+                        <h2><small><strong>Best Batting</strong></small></h2>
+                        <p>
+                            <cite>200 Razzak</cite>
+                        </p>
+                    </div>
+                    <div class="col-sm-3">
+                        <h2><small><strong>Best Bowling</strong></small></h2>
+                        <p>
+                            <cite>4/20 Sami </cite>
+                        </p>
+                    </div>
+                </center>
+
+            </div>
+            <div class="row">
+                <p style="height:10px"></p>
+                <center>
+                    <button type="button" class=" btn btn-default btn-info">Batting</button>
+                    <button type="button" class=" btn btn-default btn-success">Bowling</button>
+                </center>
+                <p style="height:5px;"></p>
+            </div>
+            <div class="row" ng-controller="team">
+
+                   <!-- <img src="images/pak-graph.gif" class="img-responsive">-->
+                    <div id="container" class="col-sm-offset-1 col-sm-10
+                                            pull-left   container">
+
+                    </div>
+                       <center>
+
+                              <ul class="pagination">
+                                <li>
+                                  <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                  </a>
+                                </li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                  <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                  </a>
+                                </li>
+                              </ul>
+
+                        </center>
+
+
+
+
+            </div>
+
+
+        </div>
+
+     </div>
+
+<!--    <div class="col-md-4 "><h3>SELECT A TEAM</h3>
+<img src="images/world-map.png" height="325px" width="300px">
+</div>
+ <div class="col-md-8"><center><h2>PAKISTAN</h2></center>
+ <div class="col-md-2"><a href="#">Match Player</a></div>
+  <div class="col-md-2"><a href="#">Highest Total</a></div>
+   <div class="col-md-2"><a href="#">Lowest Total</a></div>
+    <div class="col-md-2"><a href="#">Best Batting</a></div>
+     <div class="col-md-2"><a href="#">Best Bowling</a></div>
+     <br>
+ <div class="btn-group col-md-push-5"><br>
+  <button type="button" class="btn btn-primary">BAT</button>
+  <button type="button" class="btn btn-primary">BOWL</button>
+ <br>
+  </div>
+<img src="images/pak-graph.gif">
+ </div>
+</div>
+</div>-->
+
+    <script  src="./bower_components/angular/angular.js"></script>
+    <script  src="./scripts/controller.js"></script>
+	<script  src="./scripts/bootstrap.min.js"></script>
+    <script src="./bower_components/highcharts/highcharts.js"></script>
+
+
+
+</body>
+</html>
