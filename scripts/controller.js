@@ -18,6 +18,232 @@ var myApp = angular.module('cricket', []);
                    }
 				});
     }])
+        
+    .controller('pagination',['$scope',function($scope){
+        
+        $scope.page='graph-1.html';
+        
+        $scope.changePage=function(name){
+            $scope.page=name;
+            console.log(name);
+        }
+        
+        
+    }])
+        
+        
+        
+        
+    .controller('graph-4',['$scope',function($scope){
+        
+        Highcharts.chart('graph-4',{
+            
+            title:{
+              text:"Run comparison analysis"  
+            },
+            
+            
+            xAxis:{
+              
+                title:{
+                    text:'Overs'
+                },
+                  categories: ['10', '20', '30', '40', '50']
+            },
+            yAxis:{
+                title:{
+                    text:'Runs'
+                }
+            },
+       
+            
+            series:[
+                {
+                    name:'team 1',
+                    data:[2,27,43,55,66]
+                    
+                },{
+                    name:'team 2',
+                    data:[35,43,56,80,90]
+                    
+                
+                },{
+                    name:'wicket fall of team 1',
+                    type:'scatter',
+                    color: 'rgba(223, 83, 83, .5)',
+                    data:[
+                        [0,20],[1,34],[0,34],[4,32]
+                        
+                    ]
+                },{
+                    name:'wicket fall of team 2',
+                    type:'scatter',
+                    color: 'rgba(65, 25, 253, .5)',
+                    data:[
+                        [0,25],[1,44],[0,54],[4,62]
+                        
+                    ]
+                }
+                
+            ]
+            
+            
+            
+            
+            
+        });
+        
+        
+        
+        
+    }])
+    
+    
+    
+     .controller('graph-3',['$scope',function($scope){
+        
+        Highcharts.chart('graph-3',{
+                    chart:{
+                        type:'bar'
+                    },
+            
+                    title:{
+                        text:'Run concede by each bowler over the 10overs interval'
+                    },
+                    
+                    xAxis: {
+                        
+                        categories: ['10', '20', '30', '40', '50'],
+                        title:{
+                           text:'Over No'
+                        }
+                    },  
+                    yAxis:{
+                        minTickInterval:10,
+                        title:{
+                            text:'Runs'
+                        }
+                    },
+                            
+                     plotOptions: {
+                        series: {
+                            stacking: 'normal'
+                        }
+                    },
+
+				    series: [{
+                            name:"Shoaib",
+                            data:[2,4,0,0,0]
+                        },{
+                             name:"Inzamam",
+                            data:[0,4,25,134,0]
+                        },{
+                             name:"Shoaib khan",
+                            data:[0,4,34,41,4]
+            
+                        }]
+            });
+        
+        
+    }])
+    
+    
+    
+    .controller('graph-2',['$scope',function($scope){
+        
+        Highcharts.chart('graph-2',{
+                    chart:{
+                        type:'bar'
+                    },
+            
+                    title:{
+                        text:'Partnership Analysis of the team'
+                    },
+                    
+                    xAxis: {
+                        type:'linear',
+                        title:{
+                           text:'Partnership No'
+                        }
+                    },  
+                    yAxis:{
+                        minTickInterval:10,
+                        title:{
+                            text:'Runs'
+                        }
+                    },
+                            
+                     plotOptions: {
+                        series: {
+                            stacking: 'normal'
+                        }
+                    },
+
+				    series: [{
+                            name:"Shoaib",
+                            data:[2,4,0,0,0]
+                        },{
+                             name:"Inzamam",
+                            data:[0,4,25,134,0]
+                        },{
+                             name:"Shoaib khan",
+                            data:[0,4,34,41,4]
+            
+                        }]
+            });
+        
+        
+    }])
+    
+    
+    
+    
+    .controller('graph-1',['$scope',function($scope){
+       
+        Highcharts.chart('graph-1', {
+                        
+                    chart:{
+                        type:'column'
+                    },
+            
+                    title:{
+                        text:'Run contribution of each batsman'
+                    },
+                    
+                    xAxis: {
+                        categories: ['10', '20', '30', '40', '50']
+                    },
+                    yAxis:{
+                       type:'linear',
+                        title:{
+                            text:'Runs'
+                        }
+                    },
+                            
+                     plotOptions: {
+                        column: {
+                            stacking: 'normal'
+                        }
+                    },
+
+				    series: [{
+                            name:"Shoaib",
+                            data:[2,4,0,0,0]
+                        },{
+                             name:"Inzamam",
+                            data:[0,4,5,3,0]
+                        },{
+                             name:"Shoaib khan",
+                            data:[0,4,0,4,4]
+            
+                        }]
+				});
+        
+    }])
+    
+    
+    
+    
 
      .controller('match_team1',['$scope',function($scope){
            Highcharts.chart('team1', {
