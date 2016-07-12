@@ -1,0 +1,51 @@
+<html ng-app='cricket'>
+
+    <head>
+            <title>Visualize Cricket</title>
+            <link rel="stylesheet" href="../styles/bootstrap.min.css">
+            <link rel="stylesheet" href="../styles/customStyles.css">
+            <link rel="stylesheet" href="../bower_components/ammap3/ammap/ammap.css">
+            <script type="text/javascript" src="../bower_components/ammap3/ammap/ammap.js"> </script>
+            <script src="../bower_components/ammap3/ammap/maps/js/worldLow.js"></script>
+
+    </head>
+    <body>
+    
+            
+            <div class="=container-fluid" ng-controller='pagination'>
+                <div class="row" > 
+                   
+                    <div ng-include src="page"></div>
+                    
+                    
+                </div>
+                <div class="row">
+                <center>    
+                    <ul class="pagination">
+                      <li><a class="active"
+                            ng-click="changePage('graph-1.html')" 
+                             >1</a></li>
+                      <li ><a ng-click="changePage('graph-2.html')">2</a></li>
+                      <li><a ng-click="changePage('graph-3.html')">3</a></li>
+                      <li><a ng-click="changePage('graph-4.html')">4</a></li>
+                      <li><a ng-click="changePage('graph-2.html')">5</a></li>
+                    </ul>
+                </center>
+                
+                </div>
+        
+        
+            </div>
+       
+        
+            <script  src="../bower_components/angular/angular.js">  </script>
+            <script  src="../scripts/controller.js"></script>
+            <script src="../bower_components/jquery-1.9.1.min/index.js"></script>
+
+            <script  src="../scripts/bootstrap.min.js"></script>
+
+            <script src="../bower_components/highcharts/highcharts.js"></script>
+    </body>    
+
+
+</html>
