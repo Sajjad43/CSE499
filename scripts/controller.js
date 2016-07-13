@@ -19,8 +19,11 @@ var myApp = angular.module('cricket', []);
 				});
     }])
 
-    .controller('graph-6',['$scope',function($scope){
-          Highcharts.chart('graph-6',{
+    
+        
+        
+    .controller('match_bowl_3',['$scope',function($scope){
+          Highcharts.chart('match_bowl_3',{
         title: {
             text: 'Combination chart'
         },
@@ -97,9 +100,9 @@ var myApp = angular.module('cricket', []);
     }])
 
 
-    .controller('graph-5',['$scope',function($scope){
+    .controller('match_bowl_2',['$scope',function($scope){
 
-        Highcharts.chart('graph-5',{
+        Highcharts.chart('match_bowl_2',{
 
               chart:{
                 type:'heatmap',
@@ -144,7 +147,7 @@ var myApp = angular.module('cricket', []);
 
     .controller('pagination',['$scope',function($scope){
 
-        $scope.page='./views/graph-1.html';
+        $scope.page='./views/match_bat_1.html';
 
         $scope.changePage=function(name){
             $scope.page='./views/'+name;
@@ -153,13 +156,82 @@ var myApp = angular.module('cricket', []);
 
 
     }])
+    
+    
+    
+    
+    
+    
+    .controller('player_bat_1',['$scope',function($scope){
+        
+        Highcharts.chart('player_bat_1',{
+           
+            title:{
+                text:'Team Batting performance for consecutive matches'
+            },
+            xAxis:{
+                categories:['1','2','3','4','5'],
+                title:{
+                    text:'Matches'
+                }
+            },
+            yAxis:[
+                {
+                   labels:{
+                       style:{
+                        color:Highcharts.getOptions().colors[1]            
+                       }
+                   },
+                   title:{
+                        text:'Strike Rate',
+                        style:{
+                            color:Highcharts.getOptions().colors[1] 
+                        }
+                     }
+                    
+                },{
+                   labels:{
+                       style:{
+                            color:Highcharts.getOptions().colors[0]            
+                       }
+                   },
+                   title:{
+                        text:'Boundary',
+                        style:{
+                            color:Highcharts.getOptions().colors[0] 
+                        }
+                    },
+                    opposite:true
+                    
+                }],
+            tooltip:{
+              shared:true  
+            },
+            series:[{
+                name:'Boundary',
+              
+                data:[3,5,6,7,8],
+                yAxis:1
+            },{
+                name:'Strike rate',
+               
+              
+                data:[5,6,16,37,48]
+            }]
+                
+            
+            
+        });
+        
+    }])
+    
 
 
 
 
-    .controller('graph-4',['$scope',function($scope){
+    .controller('match_bat_3',['$scope',function($scope){
 
-        Highcharts.chart('graph-4',{
+        Highcharts.chart('match_bat_3',{
 
             title:{
               text:"Run comparison analysis"
@@ -223,9 +295,9 @@ var myApp = angular.module('cricket', []);
 
 
 
-     .controller('graph-3',['$scope',function($scope){
+     .controller('match_bowl_1',['$scope',function($scope){
 
-        Highcharts.chart('graph-3',{
+        Highcharts.chart('match_bowl_1',{
                     chart:{
                         type:'bar'
                     },
@@ -280,9 +352,9 @@ var myApp = angular.module('cricket', []);
 
 
 
-    .controller('graph-2',['$scope',function($scope){
+    .controller('match_bat_2',['$scope',function($scope){
 
-        Highcharts.chart('graph-2',{
+        Highcharts.chart('match_bat_2',{
                     chart:{
                         type:'bar'
                     },
@@ -331,9 +403,9 @@ var myApp = angular.module('cricket', []);
 
 
 
-    .controller('graph-1',['$scope',function($scope){
+    .controller('match_bat_1',['$scope',function($scope){
 
-        Highcharts.chart('graph-1', {
+        Highcharts.chart('match_bat_1', {
 
                     chart:{
                         type:'column'
