@@ -100,13 +100,16 @@
                 </center>
                 <p style="height:5px;"></p>
             </div>
-            <div class="row" ng-controller="player">
+            <div class="row" ng-controller="pagination">
 
                    <!-- <img src="images/pak-graph.gif" class="img-responsive">-->
-                    <div id="container" class="col-sm-offset-1 col-sm-10
+                <!--    <div id="container" class="col-sm-offset-1 col-sm-10
                                             pull-left   container">
-
-                    </div>
+                
+                    </div>-->
+                    
+                        <div ng-include src="page" class="col-sm-offset-1 col-sm-10 pull-left container"></div>
+                
                        <center>
 
                               <ul class="pagination">
@@ -115,11 +118,10 @@
                                     <span aria-hidden="true">&laquo;</span>
                                   </a>
                                 </li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
+                                <li><a  ng-click="changePage('player_bat_1.html')">1</a></li>
+                                <li><a  ng-click="changePage('player_bowl_1.html')">2</a></li>
+                                <li><a  ng-click="changePage('player_bat_2.html')">3</a></li>
+                              
                                 <li>
                                   <a href="#" aria-label="Next">
                                     <span aria-hidden="true">&raquo;</span>
@@ -160,9 +162,14 @@
 </div>-->
 
     <script  src="./bower_components/angular/angular.js"></script>
-    <script  src="./scripts/controller.js"></script>
-	<script  src="./scripts/bootstrap.min.js"></script>
-    <script src="./bower_components/highcharts/highcharts.js"></script>
+		<script src="./bower_components/highcharts/highcharts.js"></script>
+		<script src="./bower_components/highcharts/modules/heatmap.js"></script>
+		<script src="./bower_components/highcharts/modules/exporting.js"></script>
+	  <script  src="./scripts/controller.js"></script>
+		<script src="./bower_components/jquery-1.9.1.min/index.js"></script>
+
+		<script  src="./scripts/bootstrap.min.js"></script>
+
 
 
 
