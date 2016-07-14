@@ -114,16 +114,27 @@ var myApp = angular.module('cricket', []);
                 text:"Batsman VS Bowler"
               },
               xAxis:{
-                categories:['Shoaib','Khalid','Sami','Razzaq']
+                categories:['Shoaib','Khalid','Sami','Razzaq'],
+                  title:{
+                      text:'Batsaman'
+                  }
               },
               yAxis:{
-                categories:['Balaji','RP Singh','Yuvraj','Dravid']
+                categories:['Balaji','RP Singh','Yuvraj','Dravid'],
+                title:{
+                    text:'Bowler'
+                }  
               },
               colorAxis: {
                min: 0,
                minColor: '#FFFFFF',
                maxColor: Highcharts.getOptions().colors[0]
              },
+            legend:{
+                layout:'vertical',
+                align:'right' ,
+                verticalAlign:'top'
+            },
 
             series:[{
               name:'Batsman and Bowler',
@@ -147,7 +158,7 @@ var myApp = angular.module('cricket', []);
 
     .controller('pagination',['$scope',function($scope){
 
-        $scope.page='./views/match_bat_1.html';
+        $scope.page='./views/player_bat_1.html';
 
         $scope.changePage=function(name){
             $scope.page='./views/'+name;
@@ -155,6 +166,153 @@ var myApp = angular.module('cricket', []);
         }
 
 
+    }])
+    
+    
+    
+    .controller('player_bat_2',['$scope',function($scope){
+        
+        Highcharts.chart('player_bat_2',{
+            
+            title:{
+                text:"Best performance of the batsmen on the respective batting position"
+            },
+            xAxis:{
+             
+                type:'category',
+                title:{
+                    
+                    text:'Position'
+                }
+            },
+            tooltip:{
+              shared:true  
+            },
+            yAxis:[{
+                title:{
+                    text:'No of times batted',
+                    style:{
+                     color:Highcharts.getOptions().colors[3]
+                    }
+                },
+                labels:{
+                    style:{
+                     color:Highcharts.getOptions().colors[3]
+                    }
+                }
+            },{
+                title:{
+                    text:'Batting Average',
+                    style:{
+                     color:Highcharts.getOptions().colors[8]
+                    }
+                } ,
+                labels:{
+                    style:{
+                     color:Highcharts.getOptions().colors[3]
+                    }
+                },
+                opposite:true
+            }],
+            series:[{
+                name:'No of times played',
+                color:Highcharts.getOptions().colors[3],
+                data:[20,40,50,4,5,34,3,45]
+            },{
+                name:'Batting Average',
+                color:Highcharts.getOptions().colors[8],
+                data:[20,20,40,14,5,45,3,12],
+                yAxis:1
+            }]
+            
+            
+            
+        })
+        
+        
+    }])
+    
+    
+    .controller('player_bowl_1',['$scope',function($scope){
+        
+        Highcharts.chart('player_bowl_1',{
+            
+            title:{
+                text:'Bowling Performance'
+            },
+            xAxis:{
+                categories:['1','2','3','4','5'],
+                title:{
+                    text:'Match'
+                }
+            },
+            yAxis:[
+                {
+                    labels:{
+                      style:{
+                         color:Highcharts.getOptions().colors[7]
+                      } 
+                    },
+                    title:{
+                        text:'Run',
+                        style:{
+                            color:Highcharts.getOptions().colors[7] 
+                        }
+                    }
+                },{
+                    labels:{
+                      style:{
+                         color: Highcharts.getOptions().colors[3] 
+                      } 
+                    },
+                    title:{
+                        text:'Over',
+                        style:{
+                              color:  Highcharts.getOptions().colors[3] 
+                              } 
+                    },
+                    opposite:true
+                },{
+                   labels:{
+                      style:{
+                         color:Highcharts.getOptions().colors[0]
+                      } 
+                    },
+                    title:{
+                        text:'Wicket',
+                        style:{
+                           color:Highcharts.getOptions().colors[0]
+                        } 
+                    } ,
+                    opposite:true
+                }
+            ],
+            tooltip:{
+                shared:true
+            },
+            series:[{
+                type:'column',
+                name:'Run',
+                data:[23,43,54,65,57],
+                color:   Highcharts.getOptions().colors[7] 
+            },{
+                type:'column',
+                name:'Over',
+                data:[4,5,7,4,10],
+                yAxis:1,
+                
+                    color:   Highcharts.getOptions().colors[3] 
+                
+            },{
+                name:'wicket',
+                data:[2,3,4,1,6],
+                yAxis:2
+                
+            }]
+            
+        })
+        
+        
     }])
     
     
@@ -183,7 +341,7 @@ var myApp = angular.module('cricket', []);
                        }
                    },
                    title:{
-                        text:'Strike Rate',
+                        text:'Runs',
                         style:{
                             color:Highcharts.getOptions().colors[1] 
                         }
@@ -196,7 +354,7 @@ var myApp = angular.module('cricket', []);
                        }
                    },
                    title:{
-                        text:'Boundary',
+                        text:'Balls',
                         style:{
                             color:Highcharts.getOptions().colors[0] 
                         }
@@ -208,15 +366,16 @@ var myApp = angular.module('cricket', []);
               shared:true  
             },
             series:[{
-                name:'Boundary',
+                name:'Balls',
+                type:'column',
               
-                data:[3,5,6,7,8],
+                data:[30,50,6,7,18],
                 yAxis:1
             },{
-                name:'Strike rate',
-               
+                name:'Runs',
+               type:'column',
               
-                data:[5,6,16,37,48]
+                data:[50,22,16,37,48]
             }]
                 
             
@@ -231,19 +390,56 @@ var myApp = angular.module('cricket', []);
 
     .controller('match_bat_3',['$scope',function($scope){
 
+       
+        var marker1={
+                           
+                            fillColor:'white',
+                            lineWidth:2,
+                            radius:6,
+                            states:{
+                               hover:{
+                                 fillColor:'white',
+                                 lineWidth:2,
+                                   lineColor:Highcharts.getOptions().colors[1]
+                               }
+                                 
+                            },
+                            lineColor:Highcharts.getOptions().colors[1]
+                        };
+        var marker2={
+                           
+                            fillColor:'white',
+                            lineWidth:2,
+                            radius:6,
+                            states:{
+                               hover:{
+                                 fillColor:'white',
+                                 lineWidth:2,
+                                   lineColor:Highcharts.getOptions().colors[0]
+                               }
+                                 
+                            },
+                            lineColor:Highcharts.getOptions().colors[0]
+                        };
+                
+                    
+        
         Highcharts.chart('match_bat_3',{
 
             title:{
               text:"Run comparison analysis"
             },
 
-
             xAxis:{
 
                 title:{
                     text:'Overs'
                 },
-                  categories: ['10', '20', '30', '40', '50']
+                type:"linear",
+                tickInterval:10,
+                min:0,
+                max:50
+                
             },
             yAxis:{
                 title:{
@@ -254,42 +450,36 @@ var myApp = angular.module('cricket', []);
 
             series:[
                 {
+                    type:"spline",
                     name:'team 1',
-                    data:[2,27,43,55,66]
+                    data:[[0,0],{
+                        x:10,        
+                        y: 40,
+                        marker:marker2
+            
+                    },[20,60],{
+                        x:30,        
+                        y: 120,
+                        marker:marker2
+            
+                    },[40,200],[50,250]]
 
                 },{
                     name:'team 2',
-                    data:[35,43,56,80,90]
+                    data:[[0,0],{
+                        x:5,        
+                        y: 40.5,
+                        marker:marker1
+            
+                    },[10,35],[20,43],[30,56],{
+                        x:40,        
+                        y: 205,
+                        marker:marker1 }]
 
 
-                },{
-                    name:'wicket fall of team 1',
-                    type:'scatter',
-                    color: 'rgba(223, 83, 83, .5)',
-                    data:[
-                        [0,20],[1,34],[1,36],[1,40],[2,34],[0,34],[4,32]
-
-                    ]
-                },{
-                    name:'wicket fall of team 2',
-                    type:'scatter',
-                    color: 'rgba(65, 25, 253, .5)',
-                    data:[
-                        [0,25],[1,44],[0,54],[4,62],[2,12],[0,39],[4,23]
-
-                    ]
-                }
-
-            ]
-
-
-
-
+                }]
 
         });
-
-
-
 
     }])
 
@@ -328,14 +518,13 @@ var myApp = angular.module('cricket', []);
 
 				    series: [{
                             name:"Shoaib",
-                            data:[2,4,0,0,0]
+                             data:[{x:0,y:23},{x:2,y:45}]
                         },{
                              name:"Inzamam",
                             data:[0,4,25,134,0]
                         },{
                              name:"Shoaib khan",
-                            data:[0,4,34,41,4]
-
+                            data:[{x:2,y:25},{x:0,y:47},{x:4,y:23}]
                         },{
                              name:"Waqar",
                             data:[0,14,39,24,4]
@@ -384,10 +573,10 @@ var myApp = angular.module('cricket', []);
 
 				    series: [{
                             name:"Shoaib",
-                            data:[2,0,0,0]
+                            data:[{x:0,y:23},{x:2,y:45}]
                         },{
                              name:"Inzamam",
-                            data:[40,5,0,0]
+                            data:[{x:2,y:25},{x:0,y:47},{x:4,y:23}]
                         },{
                              name:"Shoaib khan",
                              data:[0,61,7,4]
@@ -436,7 +625,10 @@ var myApp = angular.module('cricket', []);
 
 				    series: [{
                             name:"Yasir",
-                            data:[2,4,0,0,0]
+                            data:[{
+                                x:0,
+                                y:6
+                            },{x:4,y:7}]
                         },{
                              name:"Inzamam",
                             data:[0,4,5,3,0]
