@@ -217,11 +217,11 @@ var myApp = angular.module('cricket', []);
             series:[{
                 name:'No of times played',
                 color:Highcharts.getOptions().colors[3],
-                data:[20,40,50,4,5,34,3,45]
+                data:[20,40,50,4,5,34,35,45]
             },{
                 name:'Batting Average',
                 color:Highcharts.getOptions().colors[8],
-                data:[20,20,40,14,5,45,3,12],
+                data:[20,20,40,14,5,45,2,12],
                 yAxis:1
             }]
             
