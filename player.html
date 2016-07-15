@@ -11,164 +11,132 @@
 </head>
 <body>
 
-<nav class="navbar navbar-custom navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
+    <nav class="navbar navbar-custom navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
 
-      <a class="navbar-brand" href="#">Visualize Cricket</a>
-    </div>
-    <div class="navbar-collapse collapse" id="myNavbar">
-      <ul class="nav navbar-nav pull-right">
-        <li ><a href="home.html">HOME</a></li>
-
-
-        <li class="active"><a href="team.html">TEAM</a></li>
-        <li><a href="match.html">MATCH</a></li>
-        <li><a href="player.html">PLAYER</a></li>
-        <li><a href="#">ABOUT</a></li>
-
-      </ul>
-
-    </div>
-  </div>
-</nav>
-<div class="container-fluid">
-    <div class="row" ng-controller="home">
-
-        <div class="col-sm-4">
-           <center>
-
-               <h3>SELECT A TEAM</h3>
-							 <!--
-                <img class="img-responsive width:50px;" src="images/world-map.png" >
-							-->
-							<div id="mapdiv" class="makingRelative" style=" width:90%;height:300px;"></div>
-            </center>
+          <a class="navbar-brand" href="#">Visualize Cricket</a>
+        </div>
+        <div class="navbar-collapse collapse" id="myNavbar">
+          <ul class="nav navbar-nav pull-right">
+            <li ><a href="home.html">HOME</a></li>
 
 
-					</div>
+            <li class="active"><a href="team.html">TEAM</a></li>
+            <li><a href="match.html">MATCH</a></li>
+            <li><a href="player.html">PLAYER</a></li>
+            <li><a href="#">ABOUT</a></li>
 
-
-
-
-        <div class="col-sm-8">
-
-            <div class="row">
-
-                <center> <h2>Inzamam</h2> </center>
-
-                <center>
-                    <div class="col-sm-3">
-                        <h2><small><strong>Matches PLayed</strong></small></h2>
-                        <p>
-                            <cite>-35</cite>
-                        </p>
-
-                    </div>
-                    <div class="col-sm-2">
-                        <h2><small><strong>Total Runs</strong></small></h2>
-                        <p>
-                            <cite>-300</cite>
-                        </p>
-                    </div>
-                    <div class="col-sm-2">
-                        <h2><small><strong>Century</strong></small></h2>
-                        <p>
-                            <cite>30</cite>
-                        </p>
-                    </div>
-                    <div class="col-sm-2">
-                        <h2><small><strong>Best Batting</strong></small></h2>
-                        <p>
-                            <cite>200 with pakistan</cite>
-                        </p>
-                    </div>
-                    <div class="col-sm-3">
-                        <h2><small><strong>Best Bowling</strong></small></h2>
-                        <p>
-                            <cite>4/20 west indies</cite>
-                        </p>
-                    </div>
-                </center>
-
-            </div>
-            <div class="row">
-                <p style="height:10px"></p>
-                <center>
-                    <button type="button" class=" btn btn-default btn-info">Batting</button>
-                    <button type="button" class=" btn btn-default btn-success">Bowling</button>
-                </center>
-                <p style="height:5px;"></p>
-            </div>
-            <div class="row" ng-controller="pagination">
-
-                   <!-- <img src="images/pak-graph.gif" class="img-responsive">-->
-                <!--    <div id="container" class="col-sm-offset-1 col-sm-10
-                                            pull-left   container">
-                
-                    </div>-->
-                    
-                        <div ng-include src="page" class="col-sm-offset-1 col-sm-10 pull-left container"></div>
-                
-                       <center>
-
-                              <ul class="pagination">
-                                <li>
-                                  <a href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                  </a>
-                                </li>
-                                <li><a  ng-click="changePage('player_bat_1.html')">1</a></li>
-                                <li><a  ng-click="changePage('player_bowl_1.html')">2</a></li>
-                                <li><a  ng-click="changePage('player_bat_2.html')">3</a></li>
-                              
-                                <li>
-                                  <a href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                  </a>
-                                </li>
-                              </ul>
-
-                        </center>
-
-
-
-
-            </div>
-
+          </ul>
 
         </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row" ng-controller="home">
 
-     </div>
+            <div class="col-sm-4">
+               <center>
 
-<!--    <div class="col-md-4 "><h3>SELECT A TEAM</h3>
-<img src="images/world-map.png" height="325px" width="300px">
-</div>
- <div class="col-md-8"><center><h2>PAKISTAN</h2></center>
- <div class="col-md-2"><a href="#">Match Player</a></div>
-  <div class="col-md-2"><a href="#">Highest Total</a></div>
-   <div class="col-md-2"><a href="#">Lowest Total</a></div>
-    <div class="col-md-2"><a href="#">Best Batting</a></div>
-     <div class="col-md-2"><a href="#">Best Bowling</a></div>
-     <br>
- <div class="btn-group col-md-push-5"><br>
-  <button type="button" class="btn btn-primary">BAT</button>
-  <button type="button" class="btn btn-primary">BOWL</button>
- <br>
-  </div>
-<img src="images/pak-graph.gif">
- </div>
-</div>
-</div>-->
+                      <h3>SELECT A TEAM</h3>
 
-    <script  src="./bower_components/angular/angular.js"></script>
-		<script src="./bower_components/highcharts/highcharts.js"></script>
-		<script src="./bower_components/highcharts/modules/heatmap.js"></script>
-		<script src="./bower_components/highcharts/modules/exporting.js"></script>
-	  <script  src="./scripts/controller_player.js"></script>
-		<script src="./bower_components/jquery-1.9.1.min/index.js"></script>
+                      <div id="mapdiv" class="makingRelative" style=" width:90%;height:300px;"></div>
+                </center>
 
-		<script  src="./scripts/bootstrap.min.js"></script>
+            </div>
+
+
+            <div class="col-sm-8">
+
+                <div class="row">
+
+                    <center> <h2>Inzamam</h2> </center>
+
+                    <center>
+                        <div class="col-sm-3">
+                            <h2><small><strong>Matches PLayed</strong></small></h2>
+                            <p>
+                                <cite>-35</cite>
+                            </p>
+
+                        </div>
+                        <div class="col-sm-2">
+                            <h2><small><strong>Total Runs</strong></small></h2>
+                            <p>
+                                <cite>-300</cite>
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <h2><small><strong>Century</strong></small></h2>
+                            <p>
+                                <cite>30</cite>
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <h2><small><strong>Best Batting</strong></small></h2>
+                            <p>
+                                <cite>200 with pakistan</cite>
+                            </p>
+                        </div>
+                        <div class="col-sm-3">
+                            <h2><small><strong>Best Bowling</strong></small></h2>
+                            <p>
+                                <cite>4/20 west indies</cite>
+                            </p>
+                        </div>
+                    </center>
+
+                </div>
+                <div class="row">
+                    <p style="height:10px"></p>
+                    <center>
+                        <button type="button" class=" btn btn-default btn-info">Batting</button>
+                        <button type="button" class=" btn btn-default btn-success">Bowling</button>
+                    </center>
+                    <p style="height:5px;"></p>
+                </div>
+                <div class="row" ng-controller="pagination">
+
+
+
+                            <div ng-include src="page" class="col-sm-offset-1 col-sm-10 pull-left container"></div>
+
+                           <center>
+
+                                  <ul class="pagination">
+                                    <li>
+                                      <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                      </a>
+                                    </li>
+                                    <li><a  ng-click="changePage('player_bat_1.html')">1</a></li>
+                                    <li><a  ng-click="changePage('player_bowl_1.html')">2</a></li>
+                                    <li><a  ng-click="changePage('player_bat_2.html')">3</a></li>
+
+                                    <li>
+                                      <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                      </a>
+                                    </li>
+                                  </ul>
+
+                            </center>
+
+                </div>
+
+
+            </div>
+
+         </div>
+
+
+            <script  src="./bower_components/angular/angular.js"></script>
+            <script src="./bower_components/highcharts/highcharts.js"></script>
+            <script src="./bower_components/highcharts/modules/heatmap.js"></script>
+            <script src="./bower_components/highcharts/modules/exporting.js"></script>
+            <script  src="./scripts/controller_player.js"></script>
+            <script src="./bower_components/jquery-1.9.1.min/index.js"></script>
+            <script  src="./scripts/bootstrap.min.js"></script>
 
 
 

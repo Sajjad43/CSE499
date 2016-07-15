@@ -175,8 +175,8 @@ var app=angular.module('match',[])
 
     .controller('pagination',['$scope',function($scope){
 
-        $scope.page='./views/match_bat_1.html';
-
+        $scope.page='./views/match_bat_2.html';
+        
         $scope.changePage=function(name){
             $scope.page='./views/'+name;
             console.log(name);
@@ -187,7 +187,7 @@ var app=angular.module('match',[])
 
     .controller('pagination2',['$scope',function($scope){
 
-        $scope.page1='./views/match_bat_2.html';
+        //$scope.page1='./views/match_bat_2.html';
 
         $scope.changePage=function(name){
             $scope.page='./views/'+name;
@@ -354,10 +354,12 @@ var app=angular.module('match',[])
 
 
     .controller('match_bat_2',['$scope',function($scope){
+        $scope.id='match_bat_2';
 
         Highcharts.chart('match_bat_2',{
                     chart:{
-                        type:'bar'
+                        type:'bar',
+                        renderTo:$scope.id
                     },
 
                     title:{
@@ -404,8 +406,10 @@ var app=angular.module('match',[])
 
 
 
-    .controller('match_bat_1',['$scope',function($scope){
+    .controller('match_bat_1',function($scope){
 
+        $scope.hi="match_bat_1";
+       
         Highcharts.chart('match_bat_1', {
 
                     chart:{
@@ -460,7 +464,7 @@ var app=angular.module('match',[])
                       ]
 				});
 
-    }])
+    });
 
 
 

@@ -203,7 +203,7 @@ var app=angular.module('player',[])
     
     
     
-    .controller('player_bat_1',['$scope',function($scope){
+    .controller('player_bat_1',function($scope){
         
         Highcharts.chart('player_bat_1',{
            
@@ -265,5 +265,5 @@ var app=angular.module('player',[])
             
         });
         
-    }])
+    })
     
