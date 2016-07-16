@@ -1,130 +1,115 @@
 var app=angular.module('match',[])
 
-.controller('home',['$scope',function($scope){
+.controller('map',['$scope',function($scope){
 
             AmCharts.makeChart( "mapdiv", {
-                    /**
-                     * this tells amCharts it's a map
-                     */
+               
                     "type": "map",
 
-                    /**
-                     * create data provider object
-                     * map property is usually the same as the name of the map file.
-                     * getAreasFromMap indicates that amMap should read all the areas available
-                     * in the map data and treat them as they are included in your data provider.
-                     * in case you don't set it to true, all the areas except listed in data
-                     * provider will be treated as unlisted.
-                     */
                     "dataProvider": {
                       "map": "worldLow",
                       "getAreasFromMap": true
                     },
 
-                    /**
-                     * create areas settings
-                     * autoZoom set to true means that the map will zoom-in when clicked on the area
-                     * selectedColor indicates color of the clicked area.
-                     */
                     "areasSettings": {
-                      "autoZoom": true,
-                      "selectedColor": "#CC0000"
+                        "autoZoom": true,
+                        "selectedColor": "#CC0000"
                     },
 
-                    /**
-                     * let's say we want a small map to be displayed, so let's create it
-                     */
+                    
                     "smallMap": {}
-                  } );
+                  });
 
     }])
      
     .controller('match_bowl_3',['$scope',function($scope){
-          Highcharts.chart('match_bowl_3',{
-        title: {
-            text: 'Combination chart'
-        },
-        xAxis: {
-            categories: ['Run Concede', 'Dot Balls', 'Overs', 'Extras']
-        },
+         
+        
+        $scope.chartOptions={
+               
+                chart:{
+                   width:500  
+                },
+            
+                title: {
+                      text: 'Combination chart'
+                  },
+                xAxis: {
+                      categories: ['Run Concede', 'Dot Balls', 'Overs', 'Extras']
+                  },
 
+                labels: {
+                    items: [{
+                        html: 'Wickets',
+                        style: {
+                            left: '80px',
+                            top: '18px',
+                            color:'black'
+                        }
+                    }]
+                },
+                series: [{
+                    type: 'column',
+                    name: 'Jane',
+                    data: [3, 2, 1, 3]
+                }, {
+                    type: 'column',
+                    name: 'John',
+                    data: [2, 3, 5, 7]
+                }, {
+                    type: 'column',
+                    name: 'Joe',
+                    data: [4, 3, 3, 9]
+                },{
+                    type: 'column',
+                    name: 'KAMAL',
+                    data: [5, 12, 4, 5]
+                },
 
-        labels: {
-            items: [{
-                html: 'Wickets',
-                style: {
-                    left: '80px',
-                    top: '18px',
-                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
-                }
-            }]
-        },
-        series: [{
-            type: 'column',
-            name: 'Jane',
-            data: [3, 2, 1, 3]
-        }, {
-            type: 'column',
-            name: 'John',
-            data: [2, 3, 5, 7]
-        }, {
-            type: 'column',
-            name: 'Joe',
-            data: [4, 3, 3, 9]
-        },{
-            type: 'column',
-            name: 'KAMAL',
-            data: [5, 12, 4, 5]
-        },
+                {
+                    type: 'column',
+                    name: 'Wore',
+                    data: [2, 6, 13, 19]
+                },
+                {
+                    type: 'pie',
+                    name: 'wickets',
+                    data: [{
+                        name: 'Jane',
+                        y: 13,
 
-        {
-            type: 'column',
-            name: 'Wore',
-            data: [2, 6, 13, 19]
-        },
+                    }, {
+                        name: 'John',
+                        y: 23,
 
+                    }, {
+                        name: 'Joe',
+                        y: 19,
 
+                    }],
+                    center: [100, 80],
+                    size: 100,
+                    showInLegend: false,
+                    dataLabels: {
+                        enabled: false
+                    }
+                }]
 
-        {
-            type: 'pie',
-            name: 'wickets',
-            data: [{
-                name: 'Jane',
-                y: 13,
-
-            }, {
-                name: 'John',
-                y: 23,
-
-            }, {
-                name: 'Joe',
-                y: 19,
-
-            }],
-            center: [100, 80],
-            size: 100,
-            showInLegend: false,
-            dataLabels: {
-                enabled: false
-            }
-        }]
-
-
-      });
-
-
-
+      }
+        
+       
     }])
 
 
     .controller('match_bowl_2',['$scope',function($scope){
 
-        Highcharts.chart('match_bowl_2',{
+             $scope.chartOptions={
 
               chart:{
                 type:'heatmap',
                 marginTop:40,
                 marginBottom:80,
+                width:500,
                 plotBorderWidth:1
               },
               title:{
@@ -147,11 +132,11 @@ var app=angular.module('match',[])
                minColor: '#FFFFFF',
                maxColor: Highcharts.getOptions().colors[0]
              },
-            legend:{
-                layout:'vertical',
-                align:'right' ,
-                verticalAlign:'top'
-            },
+             legend:{
+                    layout:'vertical',
+                    align:'right' ,
+                    verticalAlign:'top'
+                },
 
             series:[{
               name:'Batsman and Bowler',
@@ -167,8 +152,7 @@ var app=angular.module('match',[])
                }
             }]
 
-        });
-
+        }
 
 
     }])
@@ -176,6 +160,7 @@ var app=angular.module('match',[])
     .controller('pagination',['$scope',function($scope){
 
         $scope.page='./views/match_bat_2.html';
+       
         
         $scope.changePage=function(name){
             $scope.page='./views/'+name;
@@ -184,60 +169,151 @@ var app=angular.module('match',[])
 
 
     }])
-
+  
     .controller('pagination2',['$scope',function($scope){
 
-        //$scope.page1='./views/match_bat_2.html';
-
+        $scope.page1='./views/match_bat_1.html';
+       
+        
         $scope.changePage=function(name){
-            $scope.page='./views/'+name;
+            $scope.page1='./views/'+name;
             console.log(name);
         }
 
 
     }])
+
+
+
+
+    .directive('matchBatOne',function(){
+   
+        
+        return {
+            restrict:'E',
+            template:'<div></div>',
+            scope:{
+                options:'='
+            },
+            link:function(scope,element){
+                
+                Highcharts.chart(element[0],scope.options);
+            }
+        }
+        
+        
+    })
+
+
+  .directive('matchBatTwo',function(){
+      return {
+          
+          restrict:'E',
+          template:'<div></div>',
+          scope:{
+              options:'='
+          },
+          link:function(scope,element){
+              Highcharts.chart(element[0],scope.options);
+          }
+          
+      }
+  })
     
-    
+ .directive('matchBatThree',function(){
+      return {
+          
+          restrict:'E',
+          template:'<div></div>',
+          scope:{
+              options:'='
+          },
+          link:function(scope,element){
+              Highcharts.chart(element[0],scope.options);
+          }
+          
+      }
+  })
+
+ .directive('matchBowlOne',function(){
+      return {
+          
+          restrict:'E',
+          template:'<div></div>',
+          scope:{
+              options:'='
+          },
+          link:function(scope,element){
+              Highcharts.chart(element[0],scope.options);
+          }
+          
+      }
+  })
+
+ .directive('matchBowlTwo',function(){
+      return {
+          
+          restrict:'E',
+          template:'<div></div>',
+          scope:{
+              options:'='
+          },
+          link:function(scope,element){
+              Highcharts.chart(element[0],scope.options);
+          }
+          
+      }
+  })
+
+
+
+
+.directive('matchBowlThree',function(){
+      return {
+          
+          restrict:'E',
+          template:'<div></div>',
+          scope:{
+              options:'='
+          },
+          link:function(scope,element){
+              Highcharts.chart(element[0],scope.options);
+          }
+          
+      }
+  })
+
+
 
 
     .controller('match_bat_3',['$scope',function($scope){
 
        
-        var marker1={
+        var marker={
                            
-                            fillColor:'white',
-                            lineWidth:2,
-                            radius:6,
-                            states:{
-                               hover:{
-                                 fillColor:'white',
-                                 lineWidth:2,
-                                   lineColor:Highcharts.getOptions().colors[1]
-                               }
-                                 
-                            },
-                            lineColor:Highcharts.getOptions().colors[1]
-                        };
-        var marker2={
-                           
-                            fillColor:'white',
-                            lineWidth:2,
-                            radius:6,
-                            states:{
-                               hover:{
-                                 fillColor:'white',
-                                 lineWidth:2,
-                                   lineColor:Highcharts.getOptions().colors[0]
-                               }
-                                 
-                            },
-                            lineColor:Highcharts.getOptions().colors[0]
-                        };
-                
-                    
-        
-        Highcharts.chart('match_bat_3',{
+                    fillColor:'white',
+                    lineWidth:2,
+                    radius:6,
+                    states:{
+                                hover:{
+                                        fillColor:'white',
+                                        lineWidth:2,
+                                        lineColor:Highcharts.getOptions().colors[7]
+                                    }
 
+                            },
+                    lineColor: Highcharts.getOptions().colors[7]
+                };
+      
+        
+       
+      
+                
+        $scope.chartOptions={
+
+            chart:{
+              width:500  
+            },
             title:{
               text:"Run comparison analysis"
             },
@@ -258,21 +334,18 @@ var app=angular.module('match',[])
                     text:'Runs'
                 }
             },
-
-
             series:[
-                {
-                    type:"spline",
+                 {
                     name:'team 1',
                     data:[[0,0],{
                         x:10,        
                         y: 40,
-                        marker:marker2
+                        marker:marker
             
                     },[20,60],{
                         x:30,        
                         y: 120,
-                        marker:marker2
+                        marker:marker
             
                     },[40,200],[50,250]]
 
@@ -281,27 +354,29 @@ var app=angular.module('match',[])
                     data:[[0,0],{
                         x:5,        
                         y: 40.5,
-                        marker:marker1
+                        marker:marker
             
                     },[10,35],[20,43],[30,56],{
                         x:40,        
                         y: 205,
-                        marker:marker1 }]
+                        marker:marker }]
 
 
                 }]
 
-        });
-
+        };
+        
+       
     }])
-
-
 
      .controller('match_bowl_1',['$scope',function($scope){
 
-        Highcharts.chart('match_bowl_1',{
+       
+         
+          $scope.chartOptions={
                     chart:{
-                        type:'bar'
+                        type:'bar',
+                        width:500
                     },
 
                     title:{
@@ -309,7 +384,6 @@ var app=angular.module('match',[])
                     },
 
                     xAxis: {
-
                         categories: ['10', '20', '30', '40', '50'],
                         title:{
                            text:'Over No'
@@ -346,20 +420,20 @@ var app=angular.module('match',[])
                             data:[0,4,4,15,41]
 
                         }]
-            });
-
-
+            }
+         
+         
+         
+        
     }])
 
-
-
     .controller('match_bat_2',['$scope',function($scope){
-        $scope.id='match_bat_2';
-
-        Highcharts.chart('match_bat_2',{
+        
+       
+        $scope.chartOptions={
                     chart:{
                         type:'bar',
-                        renderTo:$scope.id
+                        width:500
                     },
 
                     title:{
@@ -397,29 +471,24 @@ var app=angular.module('match',[])
                           },{
                             name:"Razzaq khan",
                             data:[0,0,17,4]
-                          }]
-            });
-
-
+                     }]
+            };
+     
     }])
 
-
-
-
     .controller('match_bat_1',function($scope){
-
-        $scope.hi="match_bat_1";
-       
-        Highcharts.chart('match_bat_1', {
+  
+        
+        
+        $scope.chartOptions={
 
                     chart:{
-                        type:'column'
+                        type:'column',
+                        width:500
                     },
-
                     title:{
                         text:'Run contribution of each batsman'
                     },
-
                     xAxis: {
                         categories: ['10', '20', '30', '40', '50'],
                         title:{
@@ -432,19 +501,14 @@ var app=angular.module('match',[])
                             text:'Runs'
                         }
                     },
-
-                     plotOptions: {
+                    plotOptions: {
                         column: {
                             stacking: 'normal'
                         }
                     },
-
 				    series: [{
                             name:"Yasir",
-                            data:[{
-                                x:0,
-                                y:6
-                            },{x:4,y:7}]
+                            data:[{x:0,y:6},{x:4,y:7}]
                         },{
                              name:"Inzamam",
                             data:[0,4,5,3,0]
@@ -458,13 +522,10 @@ var app=angular.module('match',[])
                             name:"Sayeed Anwar",
                             data:[0,0,10,20,4]
 
-                          }
-
-
-                      ]
-				});
-
-    });
+                          }]
+				};
+    
+      });
 
 
 

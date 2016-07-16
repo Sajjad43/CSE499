@@ -11,237 +11,187 @@
 </head>
 <body>
 
-    <nav class="navbar  navbar-custom navbar-fixed-top">
-      <div class="container-fluid">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Visualize Cricket</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav pull-right">
-                <li><a href="home.html">HOME</a></li>
+        <nav class="navbar  navbar-custom navbar-fixed-top">
+              <div class="container-fluid">
+                    <div class="navbar-header">
+                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                          <a class="navbar-brand" href="#">Visualize Cricket</a>
+                    </div>
+                  
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                          <ul class="nav navbar-nav pull-right">
+                            <li><a href="home.html">HOME</a></li>
 
 
-                <li><a href="team.html">TEAM</a></li>
-                <li class="active" ><a href="match.html">MATCH</a></li>
-                <li><a href="player.html">PLAYER</a></li>
-                <li><a href="#">ABOUT</a></li>
+                            <li><a href="team.html">TEAM</a></li>
+                            <li class="active" ><a href="match.html">MATCH</a></li>
+                            <li><a href="player.html">PLAYER</a></li>
+                            <li><a href="#">ABOUT</a></li>
 
-              </ul>
-
-            </div>
-      </div>
-    </nav>
-<div class="container-fluid" ng-controller="home">
-    <div class="row">
-
-        <div class="col-sm-4">
-           <center>
-
-               <h3>SELECT A TEAM</h3>
-
-							 <div id="mapdiv" class="makingRelative" style=" width:90%;height:300px;"></div>
-               <div class>
-
-
-               </div>
-						<!--
-                <img class="img-responsive" src="images/world-map.png" >
-            -->
-            </center>
-
-        </div>
-
-        <div class="col-sm-8" >
-
-            <div class="row">
-
-                <center> <h2>PAKISTAN VS INDIA
-
-                     <small>In lord</small>
-
-                    </h2> </center>
-
-                <center>
-                    <div class="col-sm-3">
-                        <h2><small><strong>Player of the match</strong></small></h2>
-                        <p>
-                            <cite>Inzamam</cite>
-                        </p>
+                          </ul>
 
                     </div>
-                    <div class="col-sm-2">
-                        <h2><small><strong>Highest Total</strong></small></h2>
-                        <p>
-                            <cite>300</cite>
-                        </p>
-                    </div>
-                    <div class="col-sm-2">
-                        <h2><small><strong>Lowest Total</strong></small></h2>
-                        <p>
-                            <cite>30</cite>
-                        </p>
-                    </div>
-                    <div class="col-sm-2">
-                        <h2><small><strong>Best Batting</strong></small></h2>
-                        <p>
-                            <cite>200 - Razzak </cite>
-                        </p>
-                    </div>
-                    <div class="col-sm-3">
-                        <h2><small><strong>Best Bowling</strong></small></h2>
-                        <p>
-                            <cite>4/20 - Sami </cite>
-                        </p>
-                    </div>
-                </center>
+              </div>
+        </nav>
+        <div class="container-fluid" ng-controller="map">
+                <div class="row">
 
-            </div>
+                        <div class="col-sm-4">
+                           <center>
 
-            <div class="row" >
-                <div class="col-sm-6" ng-controller="pagination">
-                    <p style="height:10px"></p>
-                    <center><h3>Pakistan</h3></center>
-                    <center>
-                        <button type="button" class=" btn btn-default btn-info">Batting</button>
-                        <button type="button" class=" btn btn-default btn-success">Bowling</button>
-                    </center>
+                               <h3>SELECT A TEAM</h3>
 
-                    <div class="row">
+                               <div id="mapdiv" class="makingRelative" style=" width:90%;height:300px;"></div>
 
-                        <div class="col-sm-12 pull-left" ng-include src="page">
-
-
+                            </center>
 
                         </div>
 
+                        <div class="col-sm-8" >
+
+                            <div class="row">
+
+                                <center>
+                                    <h2>
+                                        PAKISTAN VS INDIA<small>In lord</small>
+                                    </h2>
+                                </center>
+
+                                <center>
+                                        <div class="col-sm-3">
+                                            <h2><small><strong>Player of the match</strong></small></h2>
+                                            <p>
+                                                <cite>Inzamam</cite>
+                                            </p>
+
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <h2><small><strong>Highest Total</strong></small></h2>
+                                            <p>
+                                                <cite>300</cite>
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <h2><small><strong>Lowest Total</strong></small></h2>
+                                            <p>
+                                                <cite>30</cite>
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <h2><small><strong>Best Batting</strong></small></h2>
+                                            <p>
+                                                <cite>200 - Razzak </cite>
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h2><small><strong>Best Bowling</strong></small></h2>
+                                            <p>
+                                                <cite>4/20 - Sami </cite>
+                                            </p>
+                                        </div>
+                                </center>
+
+                            </div>
+
+                            <div class="row" >
+                                <div class="col-sm-6" ng-controller="pagination">
+                                    <p style="height:10px"></p>
+                                    <center><h3>Pakistan</h3></center>
+                                    <center>
+                                        <button type="button" class=" btn btn-default btn-info">Batting</button>
+                                        <button type="button" class=" btn btn-default btn-success">Bowling</button>
+                                    </center>
+
+                                    
+
+                                        <div  ng-include src="page"></div>
+
+                                        <center>
+                                            <nav>
+                                                  <ul class="pagination" >
+                                                        <li>
+                                                              <a href="#" aria-label="Previous">
+                                                                <span aria-hidden="true">&laquo;</span>
+                                                              </a>
+                                                        </li>
+                                                        <li><a ng-click="changePage('match_bat_1.html')">1</a></li>
+                                                        <li><a ng-click="changePage('match_bat_2.html')">2</a></li>
+                                                        <li><a ng-click="changePage('match_bat_3.html')">3</a></li>
+                                                        <li><a ng-click="changePage('match_bowl_1.html')">4</a></li>
+                                                        <li><a ng-click="changePage('match_bowl_2.html')">5</a></li>
+                                                       <li><a ng-click="changePage('match_bowl_3.html')">6</a></li>
+                                                        <li>
+                                                              <a href="#" aria-label="Next">
+                                                                <span aria-hidden="true">&raquo;</span>
+                                                              </a>
+                                                        </li>
+                                                   </ul>
+                                            </nav>
+                                        </center>
+
+                                    
+
+                            </div>
+
+                            <div class="col-sm-6" ng-controller="pagination2">
+                                    <p style="height:10px"></p>
+                                    <center><h3>India</h3></center>
+                                    <center>
+                                        <button type="button" class=" btn btn-default btn-info">Batting</button>
+                                        <button type="button" class=" btn btn-default btn-success">Bowling</button>
+                                    </center>
+
+                                    <div class="row">
+                                        <div  ng-include src="page1"></div>
+                                    </div>
 
 
+                                    <center>
 
-                        <center>
-                           <!-- <img src="images/pak-graph.gif" class="img-responsive">-->
+                                        <nav>
 
+                                            <ul class="pagination">
+                                                <li class="page-item">
+                                                      <a class="page-link" href="#" aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                      </a>
+                                                </li>
 
-
-                            <nav>
-                              <ul class="pagination" >
-                                <li>
-                                  <a href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                  </a>
-                                </li>
-                                <li><a ng-click="changePage('match_bat_1.html')">1</a></li>
-                                  <li><a ng-click="changePage('match_bat_2.html')">2</a></li>
-                                <li><a ng-click="changePage('match_bat_3.html')">3</a></li>
-                                <li><a ng-click="changePage('match_bowl_1.html')">4</a></li>
-                                <li><a ng-click="changePage('match_bowl_2.html')">5</a></li>
-                                <li>
-                                  <a href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                  </a>
-                                </li>
-                              </ul>
-
-                            </nav>
+                                                <li><a ng-click="changePage('match_bat_1.html')">1</a></li>
+                                                <li><a ng-click="changePage('match_bat_2.html')">2</a></li>
+                                                <li><a ng-click="changePage('match_bat_3.html')">3</a></li>
+                                                <li><a ng-click="changePage('match_bowl_1.html')">4</a></li>
+                                                <li><a ng-click="changePage('match_bowl_2.html')">5</a></li>
+                                                <li><a ng-click="changePage('match_bowl_3.html')">6</a></li>
+                                                <li class="page-item">
+                                                      <a class="page-link" href="#" aria-label="Next">
+                                                        <span aria-hidden="true">&raquo;</span>
+                                                      </a>
+                                                </li>
+                                          </ul>
+                                        </nav>
 
 
-                        </center>
+                                  </center>
 
-
-                    </div>
-
-
-                </div>
-
-
-                <div class="col-sm-6" ng-controller='pagination2'>
-                    <p style="height:10px"></p>
-                    <center><h3>India</h3></center>
-                    <center>
-                        <button type="button" class=" btn btn-default btn-info">Batting</button>
-                        <button type="button" class=" btn btn-default btn-success">Bowling</button>
-                    </center>
-
-                        <div class="row">
-
-
-                        <div class="col-sm-12" ng-include src="page1"></div>
-
-
+                            </div>
 
                         </div>
-
-
-                        <center>
-                            <!--<img src="images/pak-graph.gif" class="img-responsive">-->
-                            
-                            
-                            
-                            
-                            <nav>
-                              
-                                <ul class="pagination">
-                                <li class="page-item">
-                                  <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                  </a>
-                                </li>
-                                  </li>
-                                <li><a ng-click="changePage('match_bat_1.html')">1</a></li>
-                                <li><a ng-click="changePage('match_bat_2.html')">2</a></li>
-                                <li><a ng-click="changePage('match_bat_3.html')">3</a></li>
-                                <li><a ng-click="changePage('match_bowl_1.html')">4</a></li>
-                                <li><a ng-click="changePage('match_bowl_2.html')">5</a></li>
-                                <li class="page-item">
-                                  <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                  </a>
-                                </li>
-                              </ul>
-                            </nav>
-
-
-                        </center>
-
+                    </div>
                 </div>
 
-
-            </div>
-
-
+      
         </div>
-    </div>
-
- <!-- <div class="row">
-    <div class="col-sm-4">
-      <h3>Select Opponent Team</h3>
-      <img src="images/world-map.png" height="350px" width="350px">
-    </div>
-    <div class="col-sm-8">
-      <h1><center>Pakistan vs India</center></h1>
-      <div class="col-md-2"><a href="#">Matches Played</a></div>
-  <div class="col-md-2"><a href="#">Highest Score</a></div>
-   <div class="col-md-2"><a href="#">Fifty</a></div>
-    <div class="col-md-2"><a href="#">Hundred</a></div>
-     <div class="col-md-2"><a href="#">Batting Average</a></div>
-     <br>
-
-     </div>
-    <img src="images/ind-vs-pak.png">
-
-</div>
-</div>
-</div>-->
-</div>
+        
         <script  src="./bower_components/angular/angular.js">  </script>
 		<script src="./bower_components/highcharts/highcharts.js"></script>
 		<script src="./bower_components/highcharts/modules/heatmap.js"></script>
 		<script src="./bower_components/highcharts/modules/exporting.js"></script>
-	  <script  src="./scripts/controller_match.js"></script>
+        <script  src="./scripts/controller_match.js"></script>
 		<script src="./bower_components/jquery-1.9.1.min/index.js"></script>
 
 		<script  src="./scripts/bootstrap.min.js"></script>
