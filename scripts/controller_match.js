@@ -1,96 +1,5 @@
 var app=angular.module('match',["highcharts-ng"])
 
-    .directive('matchBatOne',function(){
-   
-        return {
-            restrict:'E',
-           
-            scope:{
-                options:'=',
-                idTag:'@'
-            },
-            
-            link:function(scope,element){
-                console.log(element[0]);
-                //console.log(scope.idTag);
-                
-               // element[0].setAttribute('id','match_one');
-                Highcharts.chart(element[0],scope.options);
-            }
-        }
-    })
-
-
-     .directive('matchBatTwo',function(){
-
-         return {
-              restrict:'E',
-              template:'<div></div>',
-              scope:{
-                  options:'='
-              },
-              link:function(scope,element){
-                  Highcharts.chart(element[0],scope.options);
-              }
-          }
-      })
-    
-     .directive('matchBatThree',function(){
-          return {
-              restrict:'E',
-              template:'<div></div>',
-              scope:{
-                  options:'='
-              },
-              link:function(scope,element){
-                  Highcharts.chart(element[0],scope.options);
-              }
-          }
-      })
-
-     .directive('matchBowlOne',function(){
-          return {
-              restrict:'E',
-              template:'<div></div>',
-              scope:{
-                  options:'='
-              },
-              link:function(scope,element){
-                  Highcharts.chart(element[0],scope.options);
-              }
-          }
-      })
-
-     .directive('matchBowlTwo',function(){
-       
-         return {
-              restrict:'E',
-              template:'<div></div>',
-              scope:{
-                  options:'='
-              },
-              link:function(scope,element){
-                  Highcharts.chart(element[0],scope.options);
-              }
-         }
-      })
-
-    .directive('matchBowlThree',function(){
-          return {
-              restrict:'E',
-      
-              scope:{
-                  options:'='
-              },
-              link:function(scope,element){
-                 
-                 // element[0].attr('id','matchOne')
-                  
-                  Highcharts.chart(element[0],scope.options);
-              }
-          }
-    })
-
      .controller('map',['$scope',function($scope){
 
             AmCharts.makeChart( "mapdiv", {
@@ -111,14 +20,11 @@ var app=angular.module('match',["highcharts-ng"])
         }])
      
      .controller('match_bowl_3',['$scope',function($scope){
-        
        
          $scope.chartOptions={
                
                options:{
-                chart:{
-                    
-                }
+                chart:{}
                },
                 title: {
                       text: 'Combination chart'
@@ -192,8 +98,8 @@ var app=angular.module('match',["highcharts-ng"])
 
              $scope.chartOptions={
 
-                        options:{
-                             chart:{
+                    options:{
+                            chart:{
                                  type:'heatmap',
                                   marginTop: 40,
                                   marginBottom: 80,
@@ -201,7 +107,7 @@ var app=angular.module('match',["highcharts-ng"])
 
                               },
 
-                             colorAxis: {
+                            colorAxis: {
                                     min: 0,
                                     minColor: '#FFFFFF',
                                     maxColor: Highcharts.getOptions().colors[0]
@@ -212,8 +118,8 @@ var app=angular.module('match',["highcharts-ng"])
                                 layout: 'vertical',
                                 margin: 0,
                                 verticalAlign: 'top',
-                                //y: 25,
-                               // symbolHeight: 280
+                                y: 25,
+                                symbolHeight: 280
                             },
                           
                       },
@@ -221,7 +127,7 @@ var app=angular.module('match',["highcharts-ng"])
                          text:"Batsman VS Bowler"
                       },
                       xAxis:{
-                        categories:['Shoaib','Khalid','Sami','Razzaq'],
+                        categories:['Shoaib','Khalid','Sami','Razzaq','Shafiq','Azhar','Yaqat','Hayes','Nana'],
                           title:{
                               text:'Batsaman'
                           }
@@ -240,7 +146,13 @@ var app=angular.module('match',["highcharts-ng"])
                       data:[[0,0,33],[0,1,42],[0,2,34],[0,3,94],
                             [1,0,23],[1,1,4],[1,2,54],[1,3,54],
                             [2,0,23],[2,1,2],[2,2,24],[2,3,24],
-                            [3,0,2],[3,1,24],[3,2,54],[3,3,34]
+                            [3,0,2],[3,1,24],[3,2,54],[3,3,34],
+                            [4,0,2],[4,1,24],[4,2,54],[4,3,34],
+                            [5,0,2],[5,1,24],[5,2,54],[5,3,34],
+                            [6,0,2],[6,1,24],[6,2,54],[6,3,34],
+                            [7,0,2],[7,1,24],[7,2,54],[7,3,34],
+                            [8,0,2],[8,1,24],[8,2,54],[8,3,34],
+                            
                           ],
                       dataLabels:{
                          enabled:true,
