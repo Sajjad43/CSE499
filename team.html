@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="cricket">
+<html ng-app="team">
 <head>
 	<title>Visualize Cricket</title>
 		<link rel="stylesheet" href="./styles/bootstrap.min.css">
@@ -19,13 +19,11 @@
     </div>
     <div class="navbar-collapse collapse" id="myNavbar">
       <ul class="nav navbar-nav pull-right">
-        <li ><a href="home.html">HOME</a></li>
-
-
-        <li class="active"><a href="team.html">TEAM</a></li>
-        <li><a href="match.html">MATCH</a></li>
-        <li><a href="player.html">PLAYER</a></li>
-        <li><a href="#">ABOUT</a></li>
+            <li ><a href="home.html">HOME</a></li>
+            <li class="active"><a href="team.html">TEAM</a></li>
+            <li><a href="match.html">MATCH</a></li>
+            <li><a href="player.html">PLAYER</a></li>
+            <li><a href="#">ABOUT</a></li>
 
       </ul>
 
@@ -33,22 +31,16 @@
   </div>
 </nav>
 <div class="container-fluid">
-    <div class="row" ng-controller="home">
+    <div class="row" ng-controller="map">
 
         <div class="col-sm-4">
            <center>
 
                <h3>SELECT A TEAM</h3>
-							 <!--
-                <img class="img-responsive width:50px;" src="images/world-map.png" >
-							-->
-							<div id="mapdiv" class="makingRelative" style=" width:90%;height:300px;"></div>
+							
+				<div id="map" class="makingRelative" style=" width:90%;height:300px;"></div>
             </center>
-
-
-					</div>
-
-
+        </div>
 
 
         <div class="col-sm-8">
@@ -101,13 +93,7 @@
                 <p style="height:5px;"></p>
             </div>
             <div class="row" ng-controller="pagination">
-
-                   <!-- <img src="images/pak-graph.gif" class="img-responsive">-->
-                  <!--  <div id="container" class="col-sm-offset-1 col-sm-10
-                                            pull-left   container">
-
-                    </div>-->
-											<div ng-include src="page" class="col-sm-offset-1 col-sm-10 pull-left container"></div>
+                <div ng-include src="page" class="col-sm-offset-1 col-sm-10 pull-left container"></div>
 
                        <center>
 
@@ -118,9 +104,9 @@
                                   </a>
                                 </li>
 																<li><a class="active"
-				                              ng-click="changePage('match_bat_1.html')"
+				                              ng-click="changePage('team_bat_1.html')"
 				                               >1</a></li>
-				                        <li ><a ng-click="changePage('match_bat_2.html')">2</a></li>
+				                        <li ><a ng-click="changePage('team_bat_2.html')">2</a></li>
 				                        <li><a ng-click="changePage('match_bat_3.html')">3</a></li>
 				                        <li><a ng-click="changePage('match_bowl_1.html')">4</a></li>
 				                        <li><a ng-click="changePage('match_bowl_2.html')">5</a></li>
@@ -144,31 +130,12 @@
 
      </div>
 
-<!--    <div class="col-md-4 "><h3>SELECT A TEAM</h3>
-<img src="images/world-map.png" height="325px" width="300px">
-</div>
- <div class="col-md-8"><center><h2>PAKISTAN</h2></center>
- <div class="col-md-2"><a href="#">Match Player</a></div>
-  <div class="col-md-2"><a href="#">Highest Total</a></div>
-   <div class="col-md-2"><a href="#">Lowest Total</a></div>
-    <div class="col-md-2"><a href="#">Best Batting</a></div>
-     <div class="col-md-2"><a href="#">Best Bowling</a></div>
-     <br>
- <div class="btn-group col-md-push-5"><br>
-  <button type="button" class="btn btn-primary">BAT</button>
-  <button type="button" class="btn btn-primary">BOWL</button>
- <br>
-  </div>
-<img src="images/pak-graph.gif">
- </div>
-</div>
-</div>-->
 
-    <script  src="./bower_components/angular/angular.js"></script>
+        <script  src="./bower_components/angular/angular.js"></script>
 		<script src="./bower_components/highcharts/highcharts.js"></script>
 		<script src="./bower_components/highcharts/modules/heatmap.js"></script>
 		<script src="./bower_components/highcharts/modules/exporting.js"></script>
-	  <script  src="./scripts/controller.js"></script>
+        <script  src="./scripts/controller_team.js"></script>
 		<script src="./bower_components/jquery-1.9.1.min/index.js"></script>
 
 		<script  src="./scripts/bootstrap.min.js"></script>
