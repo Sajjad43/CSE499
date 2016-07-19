@@ -228,12 +228,7 @@ var app=angular.module('team',[])
             tooltip: {
                 valueSuffix: 'runs'
             },
-            legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'middle',
-                borderWidth: 0
-            },
+           
             series: [{
                 name: 'Match 1',
                 data: [10, 25, 8, 17, 31]
