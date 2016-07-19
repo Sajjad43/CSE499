@@ -369,10 +369,13 @@ var app=angular.module('match',["highcharts-ng"])
                             data:[{x:2,y:25},{x:0,y:47},{x:4,y:23}]
                         },{
                              name:"Shoaib khan",
-                             data:[0,61,7,4]
+                             data:[0,61,0,4]
                           },{
                             name:"Razzaq khan",
-                            data:[0,0,17,4]
+                            data:[0,0,0,4]
+                     },{
+                         name:"Sajjad",
+                         data:[{x:9,y:35}]
                      }]
             };
      
