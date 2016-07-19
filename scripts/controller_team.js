@@ -290,17 +290,7 @@ var app=angular.module('team',[])
                     }
                 }
             },
-            legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'top',
-                x: 10,
-                y: 80,
-                floating: true,
-                borderWidth: 1,
-                backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
-                shadow: true
-            },
+            
             credits: {
                 enabled: false
             },
@@ -313,6 +303,12 @@ var app=angular.module('team',[])
             }, {
                 name: 'Match-3',
                 data: [75, 110, 65]
+            },{
+                name: 'Match-4',
+                data: [35, 10, 5]
+            },{
+                name: 'Match-5',
+                data: [75, 20, 50]
             }]
     
         })
