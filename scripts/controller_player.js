@@ -67,7 +67,7 @@ var app=angular.module('player',[])
                 } ,
                 labels:{
                     style:{
-                     color:Highcharts.getOptions().colors[3]
+                     color:Highcharts.getOptions().colors[8]
                     }
                 },
                 opposite:true
