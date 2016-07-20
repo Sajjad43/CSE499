@@ -18,6 +18,25 @@ var app=angular.module('match',["highcharts-ng"])
                   });
 
         }])
+    
+      .controller('pagination',['$scope',function($scope){
+
+           
+            $scope.team1='./views/match_bat_2.html';
+            $scope.team2='./views/match_bat_1.html';
+            $scope.item=0;
+        
+            $scope.changePage=function(name){
+                $scope.team1='./views/'+name;
+                console.log(name);
+            };
+            $scope.changePage1=function(name){
+                $scope.team2='./views/'+name;
+            };
+            
+            
+
+     }])
      
      .controller('match_bowl_3',['$scope',function($scope){
        
@@ -47,7 +66,7 @@ var app=angular.module('match',["highcharts-ng"])
                     type: 'column',
                     name: 'Jane',
                     data: [3, 2, 1, 3]
-                }, {
+                },{
                     type: 'column',
                     name: 'John',
                     data: [2, 3, 5, 7]
@@ -165,32 +184,6 @@ var app=angular.module('match',["highcharts-ng"])
 
     }])
 
-    .controller('pagination',['$scope',function($scope){
-
-           
-            $scope.page='./views/match_bat_2.html';
-            
-        
-            $scope.changePage=function(name){
-                $scope.page='./views/'+name;
-               
-                console.log(name);
-            }
-
-     }])
-
-     .controller('pagination2',['$scope',function($scope){
-
-            
-            $scope.page1='./views/match_bat_1.html';
-
-            $scope.changePage=function(name){
-                $scope.page1='./views/'+name;
-                
-            }
-    }])
-
-
     .controller('match_bat_3',['$scope',function($scope){
        
         var marker={
@@ -277,10 +270,8 @@ var app=angular.module('match',["highcharts-ng"])
                     
                     options:{
                          chart:{
-
-                            type:'bar',
-
-                        }
+                             type:'bar',
+                         }
                     },
 
                     title:{
@@ -299,13 +290,11 @@ var app=angular.module('match',["highcharts-ng"])
                             text:'Runs'
                         }
                     },
-
-                     plotOptions: {
+                    plotOptions: {
                         series: {
                             stacking: 'normal'
                         }
                     },
-
 				    series: [{
                             name:"Shoaib",
                              data:[{x:0,y:23},{x:2,y:45}]
@@ -335,54 +324,54 @@ var app=angular.module('match',["highcharts-ng"])
                 options:{
                         chart:{
                             type:'bar',
-                     
                         }
                     },
                 title:{
                         text:'Partnership Analysis of the team'
                     },
 
-                    xAxis: {
+                 xAxis: {
                         categories:['1','2','3','4','5','6','7','8','9','10'],
                         title:{
                            text:'Partnership No'
                         }
                     },
-                    yAxis:{
+                 yAxis:{
                         minTickInterval:10,
                         title:{
                             text:'Runs'
                         }
                     },
 
-                     plotOptions: {
+                 plotOptions: {
                         series: {
                             stacking: 'normal'
+                        },column:{
+                            pointPadding:0.5
                         }
                     },
 
-				    series: [{
+				 series: [{
                             name:"Shoaib",
                             data:[{x:0,y:23},{x:2,y:45}]
                         },{
                              name:"Inzamam",
-                            data:[{x:2,y:25},{x:0,y:47},{x:4,y:23}]
+                             data:[{x:2,y:25},{x:0,y:47},{x:4,y:23}]
                         },{
                              name:"Shoaib khan",
                              data:[0,61,0,4]
                           },{
                             name:"Razzaq khan",
                             data:[0,0,0,4]
-                     },{
-                         name:"Sajjad",
-                         data:[{x:9,y:35}]
+                        },{
+                            name:"Sajjad",
+                            data:[{x:9,y:35}]
                      }]
             };
      
     }])
 
     .controller('match_bat_1',function($scope){
-    
         
         $scope.chartOptions={
 
@@ -392,10 +381,10 @@ var app=angular.module('match',["highcharts-ng"])
                     
                     }
                 },
-                    title:{
+                title:{
                         text:'Run contribution of each batsman'
                     },
-                    xAxis: {
+                xAxis: {
                         categories: ['10', '20', '30', '40', '50','60','70'],
                         title:{
                           text:'Per 10 overs'
@@ -403,21 +392,20 @@ var app=angular.module('match',["highcharts-ng"])
                       
                       
                     },
-                  
-                    yAxis:{
+                yAxis:{
                        type:'linear',
                         title:{
                             text:'Runs'
                         }
                     },
                    
-                    plotOptions: {
+                 plotOptions: {
                         column: {
                             stacking: 'normal'
                         }
                     },
-            loading:false,
-				    series: [{
+                loading:false,
+				series: [{
                             name:"Yasir",
                             data:[{x:0,y:6},{x:4,y:7}]
                         },{
