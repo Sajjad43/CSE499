@@ -270,7 +270,7 @@ var app=angular.module('match',["highcharts-ng"])
                     
                     options:{
                          chart:{
-                             type:'bar',
+                             type:'bar'
                          }
                     },
 
@@ -323,7 +323,7 @@ var app=angular.module('match',["highcharts-ng"])
                     
                 options:{
                         chart:{
-                            type:'bar',
+                            type:'column',
                         }
                     },
                 title:{
@@ -377,7 +377,7 @@ var app=angular.module('match',["highcharts-ng"])
 
                 options:{
                     chart:{
-                        type:'column'
+                        type:'bar'
                     
                     }
                 },
@@ -385,7 +385,7 @@ var app=angular.module('match',["highcharts-ng"])
                         text:'Run contribution of each batsman'
                     },
                 xAxis: {
-                        categories: ['10', '20', '30', '40', '50','60','70'],
+                        categories: ['10', '20', '30', '40', '50'],
                         title:{
                           text:'Per 10 overs'
                         },
@@ -410,22 +410,22 @@ var app=angular.module('match',["highcharts-ng"])
                             data:[{x:0,y:6},{x:4,y:7}]
                         },{
                              name:"Inzamam",
-                            data:[0,4,5,3,0]
+                            data:[54,4,5,3,0]
                         },{
                              name:"Imran khan",
-                            data:[0,4,0,4,4]
+                            data:[0,4,0,0,4]
                           },{
                             name:"Sayeed Anwar",
-                            data:[5,5,10,0,0]
+                            data:[0,5,10,0,0]
                           },{
                             name:"Shoaib malik",
-                            data:[0,0,10,20,4,56,76]
+                            data:[0,0,10,20,4]
                           },{
                              name:"Hussain Anwar",
-                            data:[0,0,10,20,4,8,45] 
+                            data:[0,0,10] 
                           },{
                               name:"Afridi Anwar",
-                            data:[0,0,19,29,4]
+                            data:[0,0,19]
                           }]
 				};
             
